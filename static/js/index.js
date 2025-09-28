@@ -12,57 +12,6 @@ function preloadInterpolationImages() {
   }
 }
 
-function setInterpolationImage(i) {
-  var image = interp_images[i];
-  image.ondragstart = function() { return false; };
-  image.oncontextmenu = function() { return false; };
-  $('#interpolation-image-wrapper').empty().append(image);
-}
-
-// Simple carousel implementation
-function initializeCarousel() {
-  const carousel = document.getElementById('background-carousel');
-  const items = carousel.querySelectorAll('.item');
-  let currentIndex = 0;
-  
-  if (items.length === 0) return;
-  
- 
-  const validItems = Array.from(items).filter(item => {
-    const img = item.querySelector('img');
-    return img && img.src;
-  });
-  
-  if (validItems.length === 0) return;
-  
-  function showSlide(index) {
-   
-    validItems.forEach(item => {
-      item.style.display = 'none';
-      item.style.opacity = '0';
-    });
-    
-   
-    if (validItems[index]) {
-      validItems[index].style.display = 'block';
-      
-      setTimeout(() => {
-        validItems[index].style.opacity = '1';
-      }, 10);
-    }
-  }
-  
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % validItems.length;
-    showSlide(currentIndex);
-  }
-  
- 
-  showSlide(0);
-  
- 
-  setInterval(nextSlide, 4000);
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Check for click events on the navbar burger icon
