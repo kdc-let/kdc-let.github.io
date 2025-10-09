@@ -7,8 +7,7 @@
     content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Towards Deployable Humanoid Mobile Manipulation in Industrial Manufacturing: System Integration and
-    Part-Sorting Validation</title>
+  <title>LeT</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -42,6 +41,17 @@
 </head>
 
 <body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-menu is-flex is-justify-content-center">
+      <a class="navbar-item" href="/">
+        <img src="./static/images/LeT.png" alt="Dataset Logo" style="height: 120px;">
+      </a>
+      <a class="navbar-item" href="#overview">Overview</a>
+      <a class="navbar-item" href="#features">Features</a>
+      <a class="navbar-item" href="#download">Download</a>
+      <a class="navbar-item" href="#videos">Tasks</a>
+    </div>
+  </nav>
 
   <section class="hero">
     <div class="hero-body">
@@ -55,68 +65,36 @@
     </div>
   </section>
 
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-          <div class="has-text-centered">
-            <h2 class="title is-3" style="margin-bottom: 1.5rem;">Workflow Overview</h2>
-            <div class="has-text-justified" style="margin-bottom: 1.5rem;">
-              <p style="font-size: 1.2rem; color: #666; line-height: 1.6;">
-                Workflow overview of two part-sorting tasks performed by humanoid robot. The robot first navigates to
-                pick workstations to grasp the target part, then transports it to place workstations
-                for sorting. This demonstrates the complete mobile manipulation pipeline from navigation and perception
-                to grasping and task execution.
-              </p>
-            </div>
-            <div class="workflow-image-container"
-              style="box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
-              <img src="./static/images/workflow.png" class="interpolation-image" alt="Workflow diagram"
-                style="max-width: 100%; height: auto; display: block;" />
-            </div>
-          </div>
-        </div>
-      </div>
+  <section id="overview" class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Dataset Overview</h2>
+      <p class="has-text-justified" style="font-size: 1.2rem; line-height: 1.6;">
+        It is an open project for general humanoid robot manipulation that is being continuously expanded. It currently includes:
+      </p>
     </div>
   </section>
-
-
-  <section class="section" style="padding: 3rem 1.5rem;">
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3" style="margin-bottom: 2rem;">Abstract</h2>
-          <div class="content has-text-justified"
-            style="background-color: #f8f9fa; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <p style="margin-bottom: 1.5rem; font-size: 1.2rem; line-height: 1.7;">
-              In this paper, we present a mobile manipulation
-              system for humanoid robots to solve practical industrial part-sorting tasks, in which the robot needs to
-              pick up an industrial
-              part from one workstation and transport it to another. Several
-              functional modules are included in the system.
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Key Features</h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="box">
+            <h4 class="title is-5">Different scenes</h4>
+            <p>Industrial scenes and life scenes.</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="box">
+            <h4 class="title is-5">Data format</h4>
+            <p>A common data format aligns with the Lerobot training framework.
             </p>
-            <p style="margin-bottom: 1.5rem; font-size: 1.2rem; line-height: 1.7;">
-              The lower-body control module comprises locomotion and navigation, where the
-              Model Predictive Control (MPC) is used together
-              with the Whole-Body Controller (WBC) to maintain dynamic balance during walk-
-              ing, while a navigation model simultaneously localizes the real-
-              time pose of the robot and outputs the desired walking control
-              signals to ensure that the humanoid robot moves accurately be-
-              tween different workstations. In terms of humanoid upper-body manipulation
-              we first propose a visual perception model capable of segmenting, selecting, and localizing the target
-              part from a set of candidates in the environment; an arm trajectory planning model is then employed to
-              execute the manipulation. Our system incorporates different types of visual perception
-              (learning-based and Augmented Reality (AR)-tag-based) and arm trajectory
-              planning (closed-loop learning-based and open-loop MPC-based) methods to enable our
-              system to work in a wider range of industrial part-sorting settings.
-            </p>
-            <p style="font-size: 1.2rem; line-height: 1.7;">
-              Our system is evaluated on two
-              practical industrial part-sorting tasks, e.g. Set Parts Supply (SPS)
-              and Surface Mount Technology (SMT), demonstrating satisfac-
-              tory performance, flexibility, and generalizability, with strong
-              potential for deployment in real industrial settings
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="box">
+            <h4 class="title is-5">Multi-platform</h4>
+            <p>
+              Simulation platform and real machine platform
             </p>
           </div>
         </div>
@@ -124,226 +102,125 @@
     </div>
   </section>
 
-  <section class="section" style="padding: 4rem 1.5rem;">
-    <div class="container is-fullhd">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-10">
-          <h2 class="title is-3" style="margin-bottom: 2rem;">Overall Architecture</h2>
-          <div class="has-text-justified" style="margin-bottom: 2rem;">
-            <p style="font-size: 1.2rem; color: #666; line-height: 2;">
-              Detailed architecture of our humanoid mobile manipulation system. The purple area illustrates the
-              hardware configuration, including
-              the on-board and external hardware, as well as the parts used in our experiments. The light blue area
-              illustrates our functional modules: the
-              locomotion and navigation modules jointly enable the robot to reach the desired work pose while
-              maintaining balance; the visual perception
-              module selects the optimal grasp target and provides its information; and
-              the manipulation module executes the grasping action. The red area illustrates an overview of the
-              execution process for our two tasks.
-            </p>
-          </div>
-          <div class="architecture-image-container"
-            style="box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden;">
-            <img src="./static/images/Humanoid Mobile Manipulation System.png" alt="Overall architecture"
-              style="max-width: 100%; height: auto; display: block;">
-          </div>
-        </div>
+  <section id="download" class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Download</h2>
+      <p class="has-text-centered">You can download the dataset using the links below:</p>
+      <div class="buttons is-centered">
+        <a class="button is-primary" href="https://huggingface.co/datasets/LejuRobotics/kuavo_data_challenge/tree/main">Download Dataset (huggingface)</a>
+        <!-- <a class="button is-link" href="https://example.com/documentation.pdf">Download Documentation</a> -->
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Manipulation</h2>
-
-      <!-- SPS Section -->
-      <div class="container">
-        <h3 class="title is-4 has-text-centered">SPS (Set Parts Supply)</h3>
-        <div class="columns is-multiline">
-          <div class="column is-half">
-            <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Panoramic View</h4>
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/sps1.mp4" type="video/mp4">
+  <section id="videos" class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Task Videos</h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/assembly_sorting.mp4" type="video/mp4">
+              Your browser does not support the video tag.
             </video>
-          </div>
-          <div class="column is-half">
-            <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Pick Workstation View
-            </h4>
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/sps2.mp4" type="video/mp4">
-            </video>
+            <p class="has-text-centered">Assembly Sorting</p>
           </div>
         </div>
-      </div>
-
-      <!-- SMT Section -->
-      <div class="container" style="margin-top: 3rem;">
-        <h3 class="title is-4 has-text-centered">SMT (Surface Mount Technology)</h3>
-        <div class="columns is-multiline">
-          <div class="column is-half">
-            <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Panoramic View</h4>
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/smt1.mp4" type="video/mp4">
+        <div class="column is-one-third">
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/bottleflip.mp4" type="video/mp4">
+              Your browser does not support the video tag.
             </video>
-          </div>
-          <div class="column is-half">
-            <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Pick Workstation View
-            </h4>
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/smt2.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-half">
-            <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Place Workstation View
-            </h4>
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/smt3.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-half">
-            <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Tracking View</h4>
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/smt4.mp4" type="video/mp4">
-            </video>
+            <p class="has-text-centered">Bottle Flip</p>
           </div>
         </div>
-      </div>
-    </div>
-    <div style="margin-top: 2rem;">
-      <h3 class="title is-4 has-text-centered">SMT In Real Factory</h3>
-      <div class="columns is-centered">
-        <div class="column is-half">
-          <div class="has-text-justified" style="margin-bottom: 1.5rem;">
-            <p style="font-size: 1.2rem; color: #666; line-height: 1.6;">
-              This video demonstrates our humanoid robots operating in a real industrial factory
-              environment.
-              The footage shows three robots working simultaneously in the same workspace, performing
-              SMT part-sorting tasks. This long-take video showcases the system's
-              reliability and scalability in practical manufacturing scenarios, highlighting the potential for
-              multi-humanoid robots deployment in industrial settings.
-            </p>
+        <div class="column is-one-third">
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/express_sorting.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered">Express Sorting</p>
           </div>
-          <video poster="" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/SMTF.mp4" type="video/mp4">
-          </video>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Navigation</h2>
-      <div class="has-text-justified" style="margin-bottom: 2rem;">
-        <p style="font-size: 1.2rem; color: #666; line-height: 1.6;">
-          These videos demonstrate the navigation precision of our humanoid robot system.
-          The footage showcases the robot's ability to accurately reach both pick workstations
-          and place workstations with high positioning accuracy, which is crucial for successful
-          manipulation tasks in industrial environments.
-        </p>
       </div>
       <div class="columns is-multiline">
         <div class="column is-one-third">
-          <video poster="./static/images/n.png" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/n.mp4" type="video/mp4">
-          </video>
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/package.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered">Package Handling</p>
+          </div>
         </div>
         <div class="column is-one-third">
-          <video poster="./static/images/n1.png" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/n1.mp4" type="video/mp4">
-          </video>
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/packageweighing.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered">Package Weighing</p>
+          </div>
         </div>
         <div class="column is-one-third">
-          <video poster="./static/images/n2.png" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/n2.mp4" type="video/mp4">
-          </video>
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/parts_off1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered">Parts Off 1</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Dynamic Obstacle Halt</h2>
-      <div class="has-text-justified" style="margin-bottom: 1.5rem;">
-        <p style="font-size: 1.2rem; color: #666; line-height: 1.6;">
-          These videos demonstrate the obstacle halt functionality of our proposed navigation module.
-          The
-          results show that the robot can accurately stop before contacting an obstacle, whether moving forward or
-          backward, and resume motion once the obstacle is removed.
-        </p>
-      </div>
-      <div class="columns is-multiline is-centered">
-        <div class="column is-5">
-          <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Human obstacles moving
-            backward</h4>
-          <video poster="./static/images/o.png" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/o.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="column is-5">
-          <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Human obstacles moving
-            forward</h4>
-          <video poster="./static/images/o2.png" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/o2.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="columns is-multiline is-centered" style="margin-top: 1rem;">
+      <div class="columns is-multiline">
         <div class="column is-one-third">
-          <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Human obstacles during
-            operation</h4>
-          <video poster="./static/images/o4.png" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/o4.mp4" type="video/mp4">
-          </video>
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/parts_off2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered">Parts Off 2</p>
+          </div>
         </div>
         <div class="column is-one-third">
-          <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Dynamic obstacles during
-            operation</h4>
-          <video poster="./static/images/o3.png" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/o3.mp4" type="video/mp4">
-          </video>
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/smt.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered">SMT</p>
+          </div>
         </div>
         <div class="column is-one-third">
-          <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;">Static obstacles during
-            operation</h4>
-          <video poster="./static/images/o5.png" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/o5.mp4" type="video/mp4">
-          </video>
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/sps.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered">SPS</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Task in Mujoco Simulator</h2>
-      <div class="has-text-justified" style="margin-bottom: 1.5rem;">
-        <p style="font-size: 1.2rem; color: #666; line-height: 1.6;">
-          These two videos show two tasks designed in the Mujoco simulator to replicate the pick and place dynamics of a
-          real-world part sorting operations. Task 1: The robot first uses its left arm to grasp a part
-          from the left-side moving conveyor and places it at a position on the tabletop. Then, it switches to the right
-          hand to
-          re-grasp the part and place it at another target position on the right. Task 2:The robot
-          first uses its right arm to grasp a part from the front-facing conveyor and place it onto a raised block on
-          the tabletop. It
-          then switches to the left arm to transfer the part from the block to the final target position. Among them,
-          the ambient light intensity, color, object color, position on the conveyor belt, position and color of two
-          areas will be random within a certain range.
-        </p>
-      </div>
-      <div class="columns is-multiline is-centered">
-        <div class="column is-half">
-          <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;"> Task 1</h4>
-          <video poster="" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/sim1.mp4" type="video/mp4">
-          </video>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/Targetplacement.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered">Target Placement</p>
+          </div>
         </div>
-        <div class="column is-half">
-          <h4 class="title is-6 has-text-centered" style="margin-bottom: 1rem; color: #666;"> Task 2</h4>
-          <video poster="" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/sim2.mp4" type="video/mp4">
-          </video>
+        <div class="column is-one-third">
+          <div class="box">
+            <video controls>
+              <source src="./static/videos/tidying.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered">Tidying</p>
+          </div>
         </div>
       </div>
     </div>
