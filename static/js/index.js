@@ -56,3 +56,46 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('BulmaSlider not available or error:', e);
     }
 });
+
+// 卡片展开/折叠功能
+function toggleCard(header) {
+  const card = header.parentElement;
+  const content = card.querySelector('.card-content');
+  const icon = header.querySelector('.icon i');
+  
+  // 切换激活状态
+  header.classList.toggle('active');
+  content.classList.toggle('expanded');
+  
+  // 更新图标
+  if (header.classList.contains('active')) {
+    icon.className = 'fas fa-chevron-up';
+  } else {
+    icon.className = 'fas fa-chevron-down';
+  }
+}
+
+// 手风琴展开/折叠功能
+function toggleAccordion(header) {
+  const content = header.nextElementSibling;
+  const icon = header.querySelector('.accordion-icon');
+  
+  // 切换激活状态
+  header.classList.toggle('active');
+  content.classList.toggle('expanded');
+  
+  // 更新图标
+  if (header.classList.contains('active')) {
+    icon.textContent = '-';
+  } else {
+    icon.textContent = '+';
+  }
+}
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', function() {
+  // 可以在这里添加默认展开某些部分
+  // 例如：默认展开第一个卡片
+  // const firstHeader = document.querySelector('.card-header');
+  // if (firstHeader) toggleCard(firstHeader);
+});

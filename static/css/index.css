@@ -1,35 +1,30 @@
-body {
-  font-family: 'Noto Sans', sans-serif;
-}
+/* ===== 基础样式和重置 ===== */
 
-
-.link-block a {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.dnerf {
-  font-variant: small-caps;
-}
-
-
-.teaser .hero-body {
-  padding-top: 0;
-  padding-bottom: 3rem;
-}
-
-.teaser {
-  font-family: 'Google Sans', sans-serif;
-}
-
-
-
+/* 设置全局字体和背景色 */
 body {
   font-family: 'Noto Sans', sans-serif;
   background-color: #f9f9f9;
 }
 
+/* 链接块样式 */
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
+/* 小型大写字母样式 */
+.dnerf {
+  font-variant: small-caps;
+}
+
+/* ===== 页面布局和组件 ===== */
+
+/* 导航栏样式 */
+.navbar {
+  height: 100px;
+  background: linear-gradient(90deg, #004080, #8498ac); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
 
 .navbar-menu {
   display: flex;
@@ -45,16 +40,249 @@ body {
   transition: color 0.3s ease;
 }
 
-
 .navbar-item img {
   height: 120px !important; 
   margin-right: 2rem;
 }
 
+/* 页面区块样式 */
 .section {
   padding: 4rem 1.5rem;
 }
 
+/* 页脚样式 */
+.footer {
+  color: #fff;
+  padding: 2rem 0;
+  background: linear-gradient(90deg, #004080, #8498ac); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.footer .icon-link {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
+
+.footer .icon-link:hover {
+  color: #fff;
+}
+
+/* ===== 内容卡片和交互组件 ===== */
+
+/* 内容卡片样式 */
+.content-card {
+  background: white;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+/* 卡片头部样式 */
+.card-header {
+  background: linear-gradient(135deg, #004080, #2c5aa0);
+  color: white;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.card-header:hover {
+  background: linear-gradient(135deg, #003366, #1e3a8a);
+}
+
+.card-header .title {
+  color: white;
+  margin: 0;
+}
+
+.card-header .icon {
+  transition: transform 0.3s ease;
+}
+
+.card-header.active .icon {
+  transform: rotate(180deg);
+}
+
+/* 卡片内容区域 */
+.card-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-content.expanded {
+  padding: 2rem;
+  max-height: 5000px;
+}
+
+/* 手风琴组件样式 */
+.accordion-section {
+  margin: 2rem 0;
+}
+
+.accordion-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: #004080;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: #e9ecef;
+}
+
+.accordion-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-content.expanded {
+  padding: 1.5rem;
+  max-height: 2000px;
+}
+
+/* ===== 内容展示组件 ===== */
+
+/* 挑战网格布局 */
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.challenge-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #004080;
+}
+
+.challenge-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.challenge-item h4 {
+  color: #004080;
+  margin-bottom: 0.5rem;
+}
+
+/* 解决方案部分样式 */
+.solution-section {
+  background: #f0f7ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.solution-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.solution-list li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.solution-list li:before {
+  content: "✓";
+  color: #004080;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* 目标框样式 - 白色文字已修复 */
+.goal-box {
+  background: #004080;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border-left: 4px solid #ffd700;
+}
+
+.goal-box, .goal-box strong {
+  color: white;
+}
+
+/* ===== 评分和挑战要点样式 ===== */
+
+/* 评分部分样式 */
+.scoring-section {
+  background: #fff9e6;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border-left: 4px solid #ffd700;
+}
+
+.scoring-section h5 {
+  color: #004080;
+  margin-bottom: 0.5rem;
+}
+
+.scoring-section ul {
+  margin-bottom: 1rem;
+}
+
+.scoring-note {
+  background: #e6f3ff;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* 挑战要点样式 */
+.challenge-points {
+  background: #ffe6e6;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border-left: 4px solid #ff6b6b;
+}
+
+.challenge-points h5 {
+  color: #d63031;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== 通用UI组件 ===== */
+
+/* 视频样式 */
 video {
   width: 100%;
   height: auto;
@@ -62,6 +290,7 @@ video {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* 盒子样式 */
 .box {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
@@ -72,11 +301,13 @@ video {
   transform: translateY(-10px); 
 }
 
+/* 居中对齐的段落 */
 p.has-text-centered {
   margin-top: 0.5rem;
   font-weight: bold;
 }
 
+/* 按钮样式 */
 .button {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -86,31 +317,10 @@ p.has-text-centered {
   transform: scale(1.1); 
 }
 
-.navbar {
-  height: 100px;
-  background: linear-gradient(90deg, #004080, #8498ac); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
-
-.footer {
-  /* background-color: #004080; */
-  color: #fff;
-  padding: 2rem 0;
-  background: linear-gradient(90deg, #004080, #8498ac); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
-
-.footer .icon-link {
-  font-size: 1.5rem;
-  margin: 0 0.5rem;
-  /* color: #ffd700; */
-}
-
-.footer .icon-link:hover {
-  color: #fff;
-}
+/* ===== 响应式设计 ===== */
 
 @media screen and (max-width: 768px) {
+  /* 移动端导航栏调整 */
   .navbar {
     height: 60px; 
   }
@@ -123,4 +333,41 @@ p.has-text-centered {
   .navbar-item img {
     height: 100px; 
   }
+  
+  /* 移动端网格布局调整 */
+  .challenge-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* 移动端卡片调整 */
+  .card-header {
+    padding: 1rem;
+  }
+  
+  .card-content.expanded {
+    padding: 1rem;
+  }
+  
+  /* 移动端手风琴调整 */
+  .accordion-header {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .accordion-content.expanded {
+    padding: 1rem;
+  }
+}
+
+/* ===== 保留的未使用样式（供参考） ===== */
+
+/* 这些样式在当前页面可能未使用，但保留供未来参考 */
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
 }

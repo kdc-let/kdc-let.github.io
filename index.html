@@ -46,10 +46,11 @@
       <a class="navbar-item" href="/">
         <img src="./static/images/LeT.png" alt="Dataset Logo" style="height: 120px;">
       </a>
-      <a class="navbar-item" href="#overview">Overview</a>
-      <a class="navbar-item" href="#features">Features</a>
-      <a class="navbar-item" href="#download">Download</a>
-      <a class="navbar-item" href="#videos">Tasks</a>
+      <a class="navbar-item" href="#overview">概述</a>
+      <a class="navbar-item" href="#competition">赛事介绍</a>
+      <a class="navbar-item" href="#features">特性</a>
+      <a class="navbar-item" href="#download">下载</a>
+      <a class="navbar-item" href="#videos">任务演示</a>
     </div>
   </nav>
 
@@ -101,6 +102,284 @@
       </div>
     </div>
   </section>
+
+
+
+<!-- 在 Overview 部分之后添加赛事介绍 -->
+<section id="competition" class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">赛事介绍</h2>
+    
+    <!-- 赛事简介卡片 -->
+    <div class="content-card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <h3 class="title is-4">赛事简介</h3>
+        <span class="icon">
+          <i class="fas fa-chevron-down"></i>
+        </span>
+      </div>
+      <div class="card-content">
+        <p>随着具身智能行业的快速发展，模仿学习、强化学习，决策类大模型等相关智能算法已经取得了显著的理论与应用进展。然而，推进这些算法的实际可用性和鲁棒性仍需依赖在现实世界中的持续交互与反馈过程，且此过程现有众多资源门槛：</p>
+        
+        <div class="challenge-grid">
+          <div class="challenge-item">
+            <div class="challenge-icon">💰</div>
+            <h4>设备门槛高</h4>
+            <p>高性能机器人设备价格昂贵，动辄数十万甚至数百万元</p>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon">📊</div>
+            <h4>数据成本高</h4>
+            <p>高质量数据采集需要专业场地、复杂同步系统与人工标注</p>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon">⚖️</div>
+            <h4>评测标准缺失</h4>
+            <p>缺乏统一的评测平台，算法难以在真实条件下公平比较</p>
+          </div>
+        </div>
+
+        <div class="solution-section">
+          <h4 class="title is-5">我们的解决方案</h4>
+          <p>面临重重壁垒，我们这款全新赛事将：</p>
+          <ul class="solution-list">
+            <li>首次面向全球开发者开放耗资数千万元打造的真实机器人训练场采集的高质量操作数据</li>
+            <li>全面开放真实机器人测试平台，支持选手算法的远程部署与评测</li>
+            <li>提供自研评估系统、标准化任务接口、技术社区支持</li>
+            <li>针对主赛道和特色赛道，提供数十万奖金和奖励</li>
+          </ul>
+          <div class="goal-box">
+            <strong>我们的目标：</strong> 降低技术门槛，让没有机器人的研究者也能开发、测试、部署真实世界的机器人智能系统，助力具身智能技术从学术走向工程，从想法走向落地。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 任务说明卡片 -->
+    <div class="content-card">
+      <div class="card-header" onclick="toggleCard(this)">
+        <h3 class="title is-4">任务说明</h3>
+        <span class="icon">
+          <i class="fas fa-chevron-down"></i>
+        </span>
+      </div>
+      <div class="card-content">
+        <p>本挑战赛以真实双臂人形机器人平台为核心，围绕工业典型场景设计多个具备真实部署价值的操作任务，并针对每个任务采集了大量高质量真实机器人操作数据。为了方便参赛者进行算法开发与验证，熟悉kuavo机器人的数据格式等，主办方提供了与真实机器人平台高度一致的仿真环境，并举行仿真赛。通过仿真模拟评测筛选出算法成熟度高、具备真机测试价值的队伍进入真机赛，并最终在真实机器人平台上进行算法调整与验证。</p>
+        
+        <!-- 仿真任务手风琴 -->
+        <div class="accordion-section">
+          <h4 class="title is-5 has-text-centered">仿真场景任务</h4>
+          
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>任务1：移动目标抓取</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p><strong>任务描述：</strong>此任务中，机器人左臂将左侧传送带上的物体抓取并放置到桌面指定区域1，右臂再抓取此物体并放置到区域2。</p>
+              <p><strong>环境变化：</strong>环境光照强度，颜色，物体的颜色，在传送带上的位置，区域1与区域2的位置与颜色，均会在一定范围内随机。</p>
+              
+              <div class="scoring-section">
+                <h5>评分标准：</h5>
+                <ul>
+                  <li>成功抓住传送带上物体并放到桌面上指定区域，加30分，保持方向正确，加10分</li>
+                  <li>成功抓住放置到桌面物体并放到最终目标区域，加30分，保持方向正确，加10分</li>
+                  <li>在指定时间N秒内完成，加20分，超出N秒，每一秒扣2分</li>
+                </ul>
+                
+                <div class="scoring-note">
+                  <strong>位置和方向判定：</strong>
+                  <p>物体必须在桌面上，且中心位置必须位于区域色块内才视为位置正确，仅位置成功时才会触发方向正确加分，物体z轴与世界z轴偏差不超过10度视为方向正确。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>任务2：移动物体称重</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p><strong>任务描述：</strong>此任务中，机器人右臂将正面传送带上的移动物体抓取并放置到桌面的秤(具有一定高度)上，称重后左臂再将物体从秤抓取放置到目标区域。</p>
+              <p><strong>环境变化：</strong>环境光照强度，颜色，物体的颜色，在传送带上的位置，秤与目标区域的位置与颜色，均会在一定范围内随机。</p>
+              
+              <div class="scoring-section">
+                <h5>评分标准：</h5>
+                <ul>
+                  <li>成功抓住传送带上物体并放到秤，加30分，保持方向正确，加10分</li>
+                  <li>成功抓住称重后物体并放到最终目标区域，加30分，保持方向正确，加10分</li>
+                  <li>在指定时间N秒内完成，加20分，超出N秒，每一秒扣2分</li>
+                </ul>
+                <div class="scoring-note">
+                  <strong>位置和方向判定：</strong>
+                  <p>物体必须在桌面上，且中心位置必须位于区域色块内才视为位置正确，仅位置成功时才会触发方向正确加分，物体z轴与世界z轴偏差不超过10度视为方向正确。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>任务3：物体定姿摆放</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p><strong>任务描述：</strong>此任务中，机器人需要将桌面上的三个物体中反面的物体进行翻面并运送到目标区域，正面物体不翻面仅移动到目标区域。</p>
+              <p><strong>环境变化：</strong>三个物体中会有随机的两个物体是反面，一个物体是正面，三个物体的位置会在一定范围内随机。</p>
+              
+              <div class="scoring-section">
+                <h5>评分标准：</h5>
+                <ul>
+                  <li>成功将两个反面物体运送到目标区域，每一个加10分，保持正面朝上，每一个加25分</li>
+                  <li>成功将一个正面物体运送到目标区域，加10分，保持正面朝上，加10分</li>
+                  <li>在指定时间N秒内完成，加10分，超出N秒，每一秒扣1分</li>
+                </ul>
+
+                <div class="scoring-note">
+                  <strong>位置和方向判定：</strong>
+                  <p>物体必须在桌面上，且中心位置必须位于区域内才视为位置正确，仅位置成功时才会触发方向正确加分，物体正面轴(-y)与世界z轴偏差不超过10度视为方向正确。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>任务4：全流程分拣</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p><strong>任务描述：</strong>此任务中，机器人需要先移动到前方货架，右臂抓取物体1，转身并移动到后方货架，将物体1放置于料盘A。再从后方货架移动到前方货架，左臂抓取物体2，返回后方货架并将物体2放置于料盘B。</p>
+              <p><strong>环境变化：</strong>物体1，2的位置，料盘A，B的位置会在一定范围内随机。</p>
+              
+              <div class="scoring-section">
+                <h5>评分标准：</h5>
+                <ul>
+                  <li>准确移动到目标区域，每一次加10分，共4次</li>
+                  <li>成功将两个物体放置于指定料盘，每一个加20分</li>
+                  <li>在指定时间N秒内完成，加20分，超出N秒，每一秒扣1分</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+        <!-- 真实任务手风琴 -->
+        <!-- 真实任务手风琴 -->
+        <div class="accordion-section">
+          <h4 class="title is-5 has-text-centered">真实场景任务</h4>
+          
+          <!-- 任务1：移动目标抓取 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>任务1：移动目标抓取</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p><strong>任务描述：</strong>机器人从移动的传送带上抓取物体，放置于桌面后，再将其推送至指定区域内。</p>
+              
+              <div class="challenge-points">
+                <h5>挑战要点：</h5>
+                <ul>
+                  <li>传送带运动状态下的动态抓取</li>
+                  <li>目标物体位置随机（工作范围内）</li>
+                  <li>机器人初始姿态存在±10cm位置偏移和±10°姿态偏移</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 任务2：快递袋称重 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>任务2：快递袋称重</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p><strong>任务描述：</strong>机器人从移动的传送带上拾取快递袋，先放置在电子秤上完成称重，随后再次拾起并放入指定收纳筐中。</p>
+              
+              <div class="challenge-points">
+                <h5>挑战要点：</h5>
+                <ul>
+                  <li>软包装可形变物体的稳定抓取</li>
+                  <li>目标物体外观特征多样性</li>
+                  <li>精准称重操作要求</li>
+                  <li>双臂协调操作</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 任务3：日化产品定姿摆放 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>任务3：日化产品定姿摆放</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p><strong>任务描述：</strong>机器人从杂乱摆放的日化瓶中随机拾取一瓶，传递至另一只手后，再按照指定姿态将其摆放在目标位置。瓶身摆放要求：瓶口位于黄色区域外部；瓶身大部分位于黄色区域内部；瓶身标签面朝上。</p>
+              
+              <div class="challenge-points">
+                <h5>挑战要点：</h5>
+                <ul>
+                  <li>双手协调与物体传递</li>
+                  <li>精确姿态控制</li>
+                  <li>空间约束满足</li>
+                </ul>
+              </div>
+              
+              <div class="scoring-section">
+                <h5>摆放要求详解：</h5>
+                <ul>
+                  <li><strong>瓶口位置：</strong>必须位于黄色区域外部</li>
+                  <li><strong>瓶身位置：</strong>大部分位于黄色区域内部</li>
+                  <li><strong>标签朝向：</strong>标签面必须朝上</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 任务4：全流程分拣 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>任务4：全流程分拣</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <p><strong>任务描述：</strong>机器人从指定起始点出发，移动至流利架前拾取工件，随后转身移动至放置架，将工件放置在物料筐内指定位置。</p>
+              
+              <div class="challenge-points">
+                <h5>挑战要点：</h5>
+                <ul>
+                  <li>全身运动协调</li>
+                  <li>背向操作的空间感知</li>
+                  <li>精准投放控制</li>
+                  <li>复杂环境适应（±10cm随机偏移）</li>
+                </ul>
+              </div>
+              
+              <div class="workflow-steps">
+                <h5>操作流程：</h5>
+                <ol>
+                  <li>从起始点移动至流利架</li>
+                  <li>识别并拾取指定工件</li>
+                  <li>转身移动至放置架</li>
+                  <li>将工件精准放入物料筐指定位置</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
   <section id="download" class="section">
     <div class="container">
